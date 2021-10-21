@@ -2,6 +2,7 @@
 #-*-charset: utf-8-*-
 
 import argparse
+import timeit
 
 parser = argparse.ArgumentParser(prog="Sieve0fEr4t0sthenes", description="Display every prime number in a given space N")
 parser.add_argument('N', type=int, help='given space N', metavar='')
@@ -22,7 +23,8 @@ def sieve0fEr4t0sthenes(fla66ed_PrIM3s, sP4ce, NUM):
 
 
 if __name__ == "__main__":
-    
+
+    start = timeit.default_timer()
     n = arg.N
 
     primes = [True for i in range(n+1)]
@@ -32,6 +34,10 @@ if __name__ == "__main__":
     for i in range(n + 1):
         if primes[i]:
             print(i)
+
+    stop = timeit.default_timer()
+    execTime = stop-start
+    print('\n\ntook', execTime, 's to execute')
 
 
     
