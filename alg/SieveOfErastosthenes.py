@@ -8,18 +8,18 @@ parser = argparse.ArgumentParser(prog="Sieve0fEr4t0sthenes", description="Displa
 parser.add_argument('N', type=int, help='given space N', metavar='')
 arg = parser.parse_args()
 
-def sieve0fEr4t0sthenes(fla66ed_PrIM3s, sP4ce, NUM):
+def sieveOfEratosthenes(flagged_primes, space, num):
 
-    if NUM ** 2 >= sP4ce:
-        return fla66ed_PrIM3s
+    if num ** 2 >= space:
+        return flagged_primes
 
-    if NUM < 2:
-        fla66ed_PrIM3s[NUM] = False
-    elif fla66ed_PrIM3s[NUM] == True:
-        for I in range(NUM ** 2, sP4ce+1, NUM):
-            fla66ed_PrIM3s[I] = False
+    if num < 2:
+        flagged_primes[num] = False
+    elif flagged_primes[num] == True:
+        for i in range(num ** 2, space+1, num):
+            flagged_primes[i] = False
 
-    return sieve0fEr4t0sthenes(fla66ed_PrIM3s, sP4ce, NUM+1)
+    return sieveOfEratosthenes(flagged_primes, space, num+1)
 
 
 if __name__ == "__main__":
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     primes = [True for i in range(n+1)]
 
-    primes = sieve0fEr4t0sthenes(primes, n, 0)
+    primes = sieveOfEratosthenes(primes, n, 0)
 
     for i in range(n + 1):
         if primes[i]:
