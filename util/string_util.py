@@ -20,13 +20,16 @@ def countWords(source_str):
         
     #seperate every word from any given sign it migth be concatenated with
     for sign in signs:
-        source_str.replace(sign," ")
+        source_str = source_str.replace(sign," ")
         
     #count every word and put it into a dict. Attention: Casesensitive.
+    l = []
+    l = source_str.split(" ")
+    l.sort()
     counts = {}
     for e in l:
         if(e not in counts):
-            c = s.count(e)
+            c = source_str.count(e)
             counts[e] = c
     return counts
 
