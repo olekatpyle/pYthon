@@ -2,3 +2,5 @@ util/
 proj/
 dev/
 gui/
+crypto/.crypt/
+__pycache__
